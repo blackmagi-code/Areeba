@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Happy Birthday Areeba ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Poppins:wght@300;400;500;600&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ambient canvases -->
+<canvas id="bg-canvas"></canvas>
+<canvas id="petal-canvas"></canvas>
+<canvas id="fx-canvas"></canvas>
+
+<!-- floating music toggle -->
+<button id="music-toggle" class="music-btn" aria-label="Toggle music">
+  <span class="music-icon">🎵</span>
+  <span class="music-bars"><i></i><i></i><i></i></span>
+</button>
+<audio id="bg-music" src="music.mp3" loop preload="auto"></audio>
+
+<main id="app">
+
+  <!-- OPENING SCREEN -->
+  <section class="page active" id="page-open">
+    <div class="glow-orb orb1"></div>
+    <div class="glow-orb orb2"></div>
+    <div class="content-center reveal">
+      <p class="eyebrow">✦ for my Areeba ✦</p>
+      <h1 class="hero-title">A Little Surprise<br>For You <span class="heart-pulse">❤️</span></h1>
+      <p class="sub-text">Areeba... meri jaan, sweetheart, aaj tumhare liye kuch special hai... ❤️</p>
+      <button class="glass-btn primary-btn" data-next="page-q1">
+        <span>Open Your Surprise</span> <span class="btn-heart">💝</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- PAGE 1 -->
+  <section class="page" id="page-q1">
+    <div class="content-center reveal">
+      <p class="eyebrow">question one</p>
+      <h2 class="question-title">Areeba, ek baat sach-sach batao... ❤️</h2>
+      <h3 class="question-sub">Kya tum mujhe pyaar karti ho? 🥺❤️</h3>
+      <div class="btn-row" id="btnrow-q1">
+        <button class="glass-btn yes-btn" data-action="yes-q1">YES ❤️</button>
+        <button class="glass-btn no-btn" data-action="no-escape" data-messages='["Are you sure sweetheart? 😭","Soch lo meri jaan ❤️","Ye option allowed nahi hai 😂","Nice try motki 😂❤️","Dil todogi kya? 😭"]'>NO 😏</button>
+      </div>
+      <p class="teasing-msg" id="tease-q1"></p>
+    </div>
+  </section>
+
+  <!-- SHAYARI 1 -->
+  <section class="page shayari-page" id="page-s1">
+    <div class="content-center reveal">
+      <div class="glass-card shayari-card">
+        <span class="card-mark">❝</span>
+        <p class="shayari-text">Tere chehre ki wo khoobsurat tasweer kahan se lau,<br>
+        Har lamha tere saath guzrey aisi takdeer kahan se lau,<br>
+        Main maangta hoon har safar mein saath tera,<br>
+        Tu hi bata mere haathon mein wo lakeer kahan se lau. ❤️</p>
+      </div>
+      <button class="glass-btn primary-btn" data-next="page-q2">Next ❤️</button>
+    </div>
+  </section>
+
+  <!-- PAGE 2 -->
+  <section class="page" id="page-q2">
+    <div class="content-center reveal">
+      <p class="eyebrow">question two</p>
+      <h2 class="question-title">Ek aur important sawaal hai, Mrs. ❤️</h2>
+      <h3 class="question-sub">Kya tum hamesha meri wife rahogi? 💍❤️</h3>
+      <div class="btn-row" id="btnrow-q2">
+        <button class="glass-btn yes-btn" data-action="yes-q2">YES, ALWAYS ❤️</button>
+        <button class="glass-btn no-btn" data-action="no-escape" data-messages='["Madam, galat option hai 😂","Sweetheart, dobara socho ❤️","NO button bhi tumse bhaag raha hai 😂","Ye answer accept nahi hoga 😌","Meri wife ho ya nahi? 😭😂"]'>NO 😏</button>
+      </div>
+      <p class="teasing-msg" id="tease-q2"></p>
+    </div>
+  </section>
+
+  <!-- SHAYARI 2 -->
+  <section class="page shayari-page" id="page-s2">
+    <div class="content-center reveal">
+      <div class="glass-card shayari-card rose-frame">
+        <span class="card-mark">🌹</span>
+        <p class="shayari-text">Tere pyaar ka kya hisaab du,<br>
+        Teri mohabbat ko kya khitaab du...<br>
+        Koi acha sa phool hota toh tumhen zarur pesh karte,<br>
+        Magar jo khud hi gulaab ho,<br>
+        Usey kya gulaab du... 🌹❤️</p>
+      </div>
+      <button class="glass-btn primary-btn" data-next="page-q3">Next Surprise ✨</button>
+    </div>
+  </section>
+
+  <!-- PAGE 3 -->
+  <section class="page" id="page-q3">
+    <div class="content-center reveal">
+      <p class="eyebrow">question three</p>
+      <h2 class="question-title">Agar mujhe dobara choose karna ho...</h2>
+      <h3 class="question-sub">Toh kya tum mujhe phir se choose karogi? 🥺❤️</h3>
+      <div class="btn-row" id="btnrow-q3">
+        <button class="glass-btn yes-btn" data-action="yes-q3">YES, ALWAYS ❤️</button>
+        <button class="glass-btn no-btn" data-action="no-escape" data-messages='["Dil todne ka plan hai kya? 😭","Sweetheart please 😂❤️","Correct answer tumhe pata hai 😌","NO button ko pakadna mushkil hai 😏"]'>NO 😏</button>
+      </div>
+      <p class="teasing-msg" id="tease-q3"></p>
+    </div>
+  </section>
+
+  <!-- SHAYARI 3 - DUA (peaceful) -->
+  <section class="page shayari-page serene-page" id="page-s3">
+    <div class="content-center reveal">
+      <div class="glass-card shayari-card golden-glow">
+        <span class="card-mark">🤲</span>
+        <p class="shayari-text serene-text">I pray wherever you are, you're okay and you're very happy.<br><br>
+        I pray you're always close to Allah and your heart's at peace.<br><br>
+        I pray you're never out of Allah's protection, not even for a blink. 🤲❤️</p>
+      </div>
+      <button class="glass-btn primary-btn" data-next="page-q4">Next ❤️</button>
+    </div>
+  </section>
+
+  <!-- PAGE 4 -->
+  <section class="page" id="page-q4">
+    <div class="content-center reveal">
+      <p class="eyebrow">a promise</p>
+      <h2 class="question-title">Ek promise karogi? 🥺❤️</h2>
+      <h3 class="question-sub">Chahe life mein kitni bhi problems aayein, kya tum mera haath kabhi nahi chhodogi? 🤝❤️</h3>
+      <div class="btn-row" id="btnrow-q4">
+        <button class="glass-btn yes-btn" data-action="yes-q4">YES, PROMISE 🤞❤️</button>
+        <button class="glass-btn no-btn" data-action="no-escape" data-messages='["Ye answer accept nahi hai 😭","Please try again sweetheart ❤️","Tum mujhe emotional damage de rahi ho 😂","NO button ko bhi pata hai correct answer kya hai 😏"]'>NO 😭</button>
+      </div>
+      <p class="teasing-msg" id="tease-q4"></p>
+    </div>
+  </section>
+
+  <!-- SHAYARI 4 - ARABIC -->
+  <section class="page shayari-page" id="page-s4">
+    <div class="content-center reveal">
+      <div class="glass-card shayari-card arabic-frame">
+        <span class="card-mark">✦</span>
+        <p class="arabic-text">وإن أحبوك ألفاً، فلن يحبوك إلا قطرة من بحري</p>
+        <p class="arabic-meaning">And if a thousand others love you, they will only love you a drop compared to my ocean of love for you. ❤️</p>
+      </div>
+      <button class="glass-btn primary-btn" data-next="page-q5">One More Surprise ✨</button>
+    </div>
+  </section>
+
+  <!-- PAGE 5 - FINAL QUESTION -->
+  <section class="page" id="page-q5">
+    <div class="content-center reveal">
+      <p class="eyebrow">last question</p>
+      <h2 class="question-title">Last question, meri jaan... ❤️</h2>
+      <h3 class="question-sub">Kya tum meri life ka sabse beautiful part ban kar hamesha mere saath rahogi? 🥹❤️</h3>
+      <div class="btn-row" id="btnrow-q5">
+        <button class="glass-btn yes-btn" data-action="yes-q5">YES, FOREVER ❤️</button>
+        <button class="glass-btn no-btn" data-action="no-escape" data-messages='["Sweetheart, seriously? 😭","Ye wala answer toh YES hona chahiye ❤️","Meri Motki ko kya ho gaya? 😂","NO button tumse bhi zyada naughty hai 😏","Ek baar aur soch lo meri jaan ❤️"]'>NO 😏</button>
+      </div>
+      <p class="teasing-msg" id="tease-q5"></p>
+    </div>
+  </section>
+
+  <!-- I LOVE YOU AREEBA -->
+  <section class="page" id="page-loveyou">
+    <div class="content-center reveal">
+      <div class="giant-heart">
+        <span class="giant-heart-shape">❤️</span>
+        <p class="giant-heart-text">I LOVE YOU,<br>AREEBA</p>
+      </div>
+      <p class="sub-text">And now... your real birthday surprise begins ✨</p>
+      <button class="glass-btn primary-btn" data-next="page-memories">Open My Heart ❤️</button>
+    </div>
+  </section>
+
+  <!-- MEMORIES + DUA -->
+  <section class="page serene-page" id="page-memories">
+    <div class="content-center reveal">
+      <h2 class="section-title">Humari Kahani ❤️</h2>
+      <div class="glass-card letter-card">
+        <p class="letter-text">
+        Hum hamesha ek dusre se mil nahi paate...<br><br>
+        Har baar saath baithna, har baar ek dusre ko dekhna aur har moment saath spend karna possible nahi hota.<br><br>
+        Lekin humne jo bhi time saath bitaya hai, mere liye woh priceless hai. ❤️<br><br>
+        Chahe woh chhoti si conversation ho, random hasi ho, ek dusre ko tang karna ho, ya phir hamari chhoti-chhoti ladaaiyan... sab kuch mere liye special hai.<br><br>
+        Tumhare saath guzra hua time kabhi ordinary nahi lagta. Woh mere liye memories ban jaata hai, jinhe main hamesha apne dil ke paas rakhna chahta hoon.<br><br>
+        Aur Allah se bas itni si dua hai ki hum aise hi ladte-jhagadte, ek dusre ko tang karte, phir ek dusre ko manaate hue hamesha saath rahein. ❤️<br><br>
+        Allah hamare rishte mein hamesha mohabbat, sukoon, khushi aur barkat rakhe.<br><br>
+        Hum ek dusre ka saath kabhi na chhodein aur har mushkil ke baad aur zyada strong hokar ek saath khade rahein.<br><br>
+        Allah tumhe hamesha apni hifazat mein rakhe, tumhari har pareshani ko aasaan kare aur tumhare dil ko hamesha sukoon de.<br><br>
+        Ameen. 🤲❤️
+        </p>
+      </div>
+      <p class="glow-line">Distance may keep us apart sometimes, but it can never make you less important to me. ❤️</p>
+      <button class="glass-btn primary-btn" data-next="page-final">My Final Wish For You 🎂</button>
+    </div>
+  </section>
+
+  <!-- FINAL PAGE -->
+  <section class="page" id="page-final">
+    <div class="content-center final-content">
+      <h1 class="final-title reveal-title">Happy Birthday<br>My Love, Areeba <span class="heart-pulse">❤️</span>🎂</h1>
+
+      <div class="wishes-wrap" id="wishes-wrap"></div>
+
+      <div class="photo-frame-wrap">
+        <div class="photo-frame">
+          <img src="couple-photo.jpg" alt="Us" class="couple-photo">
+        </div>
+        <p class="photo-caption">Us ❤️</p>
+        <p class="photo-sub">My favorite place will always be beside you.</p>
+      </div>
+
+      <div class="shayari-recap" id="shayari-recap"></div>
+
+      <div class="glass-card letter-card love-letter">
+        <h3 class="section-title small">My Dear Areeba ❤️</h3>
+        <p class="letter-text">
+        Aaj ka din bahut khaas hai, kyunki isi din meri duniya ki sabse pyaari ladki paida hui thi.<br><br>
+        Tum sirf meri wife nahi ho, tum meri best friend ho, meri sabse badi strength ho, aur meri sabse pyaari kamzori bhi. Humari chhoti-chhoti ladaaiyan, ek dusre ko tang karna, phir hasna, sab kuch mujhe tumse aur zyada pyaar karna sikhata hai.<br><br>
+        Hum hamesha saath nahi reh paate, lekin tum har waqt mere dil ke paas rehti ho. Har memory jo humne banayi hai, woh mere liye priceless hai.<br><br>
+        Meri dua hai ki Allah humein hamesha saath rakhe, humari mohabbat ko hamesha barkat de, aur hum dono ek dusre ko baar baar choose karte rahein — aaj, kal aur hamesha.<br><br>
+        Main tumhare saath budha hona chahta hoon, meri jaan. Tumhare saath grow karna, tumhare saath har din ek nayi memory banana — bas yehi meri sabse badi khwaish hai.<br><br>
+        I love you, my sweetheart. ❤️<br>
+        Happy Birthday meri jaan, meri wife, meri Motki, meri Areeba. 🎂❤️
+        </p>
+        <p class="letter-sign">Forever Yours,<br>Your Husband ❤️</p>
+      </div>
+
+      <div class="final-buttons">
+        <button class="glass-btn action-btn" id="btn-kiss">Send Me A Kiss 😘</button>
+        <button class="glass-btn action-btn" id="btn-love">More Love ❤️</button>
+        <button class="glass-btn action-btn" id="btn-hug">One More Hug 🤗</button>
+        <button class="glass-btn action-btn" id="btn-replay">Replay Our Story ✨</button>
+      </div>
+      <p class="teasing-msg" id="tease-final"></p>
+    </div>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
